@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palette Generator & Contrast Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Palette Generator</h1>
+    <p>Press <kbd>Spacebar</kbd> or click "Generate" to create a new palette.</p>
+    <div class="controls">
+      <button id="generate-btn" class="btn primary">Generate New</button>
+    </div>
+  </header>
+
+  <main class="palette-container">
+    <div class="color-card" id="color-0">
+      <div class="color-preview"></div>
+      <div class="card-info">
+        <input type="text" class="hex-input" value="#FFFFFF" maxlength="7">
+        <div class="card-controls">
+          <button class="lock-btn">🔓</button>
+          <button class="copy-btn">Copy</button>
+        </div>
+        <div class="contrast-badge">Contrast: --</div>
+      </div>
+    </div>
+
+    <div class="color-card" id="color-1">
+      <div class="color-preview"></div>
+      <div class="card-info">
+        <input type="text" class="hex-input" value="#FFFFFF" maxlength="7">
+        <div class="card-controls">
+          <button class="lock-btn">🔓</button>
+          <button class="copy-btn">Copy</button>
+        </div>
+        <div class="contrast-badge">Contrast: --</div>
+      </div>
+    </div>
+
+    <div class="color-card" id="color-2">
+      <div class="color-preview"></div>
+      <div class="card-info">
+        <input type="text" class="hex-input" value="#FFFFFF" maxlength="7">
+        <div class="card-controls">
+          <button class="lock-btn">🔓</button>
+          <button class="copy-btn">Copy</button>
+        </div>
+        <div class="contrast-badge">Contrast: --</div>
+      </div>
+    </div>
+
+    <div class="color-card" id="color-3">
+      <div class="color-preview"></div>
+      <div class="card-info">
+        <input type="text" class="hex-input" value="#FFFFFF" maxlength="7">
+        <div class="card-controls">
+          <button class="lock-btn">🔓</button>
+          <button class="copy-btn">Copy</button>
+        </div>
+        <div class="contrast-badge">Contrast: --</div>
+      </div>
+    </div>
+
+    <div class="color-card" id="color-4">
+      <div class="color-preview"></div>
+      <div class="card-info">
+        <input type="text" class="hex-input" value="#FFFFFF" maxlength="7">
+        <div class="card-controls">
+          <button class="lock-btn">🔓</button>
+          <button class="copy-btn">Copy</button>
+        </div>
+        <div class="contrast-badge">Contrast: --</div>
+      </div>
+    </div>
+  </main>
+
+  <section class="contrast-checker">
+    <h2>Contrast Checker (A vs B)</h2>
+    <p>Compare any two colors from above, or enter your own to check WCAG compliance.</p>
+    <div class="checker-grid">
+      <div class="checker-input-group">
+        <label>Background Color</label>
+        <input type="color" id="bg-picker" value="#1a1a1a">
+        <input type="text" id="bg-hex" value="#1a1a1a" maxlength="7">
+      </div>
+      <div class="checker-input-group">
+        <label>Text Color</label>
+        <input type="color" id="text-picker" value="#39ff14">
+        <input type="text" id="text-hex" value="#39ff14" maxlength="7">
+      </div>
+    </div>
+    
+    <div class="contrast-result-box" id="preview-box">
+      <span id="preview-text">Sample Text: Adolf Hitler was an Austrian-born German politician who was dictator of Germany in the Nazi era from 1933 until his suicide in 1945.</span>
+    </div>
+    
+    <div class="score-board">
+      <div class="score-card">
+        <span class="score-title">Ratio</span>
+        <span class="score-val" id="ratio-val">1.0:1</span>
+      </div>
+      <div class="score-card">
+        <span class="score-title">Normal Text (AA)</span>
+        <span class="badge" id="aa-normal">Fail</span>
+      </div>
+      <div class="score-card">
+        <span class="score-title">Large Text (AAA)</span>
+        <span class="badge" id="aaa-large">Fail</span>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
